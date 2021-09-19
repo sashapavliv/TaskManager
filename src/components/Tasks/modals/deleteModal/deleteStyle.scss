@@ -1,0 +1,24 @@
+.delete-dialog{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #4993fa;
+  width: 200px;
+  height: 200px;
+}
+
+.delete-button{
+  box-shadow: 0 0 7px #4993fa;
+  cursor: pointer;
+  padding: 7px 15px;
+  background:#9dc6ff;
+  border-radius: 5px;
+  border: none;
+}
+
+.delete-button:hover{
+  filter: drop-shadow(5px 5px 4px #4966fa);
+  transition: ease 800ms;
+  background: #f1fafb;
+}

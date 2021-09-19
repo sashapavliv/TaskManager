@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.task-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 150px;
+  margin: 10px;
+  padding: 15px;
+  width: calc((100vw / 3) - 50px);
+  box-shadow: 0 0 3px #4b86fd;
+  border-radius: 5px;
+  background: #4993fa;
+}
+
+.icon {
+  cursor: pointer;
+
+  &:hover {
+    filter: drop-shadow(0 0 15px #4993fa);
+  }
+}
+
+.edit {
+  width: 30px;
+  height: 30px;
+}
+
+.task-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-bottom {
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.complete-delete {
+  width: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.body {
+  padding-top: 10px;
+  padding-left: 5px;
+  width: 80%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  padding-left: 10px;
+  width: 70%;
+  background: #98baf5;
+  border-radius: 7px;
+  box-shadow: 0 0 5px #98baf5;
+}
+
+@media (max-width: 700px) {
+  .task-block {
+    width: 100%;
+  }
+}
+
+

@@ -1,0 +1,41 @@
+.main-container {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 1500px;
+}
+
+.icon {
+  cursor: pointer;
+
+  &:hover {
+    transition: 2s ease;
+    transform: rotate(0.5turn);
+  }
+}
+
+.create-block {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1500px) {
+  .main-container {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-container {
+    min-width: auto;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+
