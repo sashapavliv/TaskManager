@@ -16,9 +16,8 @@
 
 .icon-tasks {
   cursor: pointer;
-
+  transition: 2s ease;
   &:hover {
-    transition: 2s ease;
     transform: rotate(0.5turn);
   }
 }
@@ -49,6 +48,13 @@
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .create-block{
+    button{
+      margin-right: 200px;
+      width: 100px;
+      height: 30px;
+    }
   }
 }
 

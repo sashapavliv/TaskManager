@@ -1,4 +1,4 @@
-@import "../../../../styles/variables.scss";
+@import "../../../styles/variables";
 
 .complete-dialog {
   width: 500px;
@@ -8,7 +8,7 @@
   align-items: center;
 
   p {
-    color: $fourth-color;
+    color: $blue;
     text-align: center;
     font-size: 50px;
   }
@@ -23,6 +23,14 @@
     &:hover {
       transform: rotate(180deg);
     }
+  }
+}
+@media (max-width: 700px) {
+  .complete-dialog{
+    width: 80%;
+   p{
+     padding-left: 40px;
+   }
   }
 }
 

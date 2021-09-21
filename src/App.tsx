@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles/App.css';
-import Tasks from "./components/Tasks/Tasks";
+import Tasks from "./pages/Tasks/Tasks";
 
 function App() {
   return (

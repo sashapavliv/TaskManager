@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
-@import "../../../styles/variables.scss";
+@import "../../styles/variables";
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -14,9 +14,9 @@
   margin: 10px;
   padding: 15px;
   width: calc((100vw / 3) - 50px);
-  box-shadow: 0 0 3px #4b86fd;
+  box-shadow: 0 0 3px $blue;
   border-radius: 5px;
-  background: $fourth-color;
+  background: $blue;
 }
 
 .icon {
@@ -29,7 +29,7 @@
 }
 
 .task-completed-block {
-  background: #4966fa;
+  background: $dark-blue;
   p, h3{
     text-decoration-line: line-through;
   }
@@ -55,8 +55,8 @@
 }
 
 .body {
-  padding-top: 10px;
-  padding-left: 5px;
+  max-height: 100px;
+  padding: 5px;
   width: 80%;
   word-wrap: break-word;
   word-break: break-word;

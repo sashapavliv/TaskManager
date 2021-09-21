@@ -1,0 +1,35 @@
+@import "../../../styles/variables";
+
+.header, .footer {
+  background: #81b0ff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.children {
+  background: $blue-grey;
+}
+
+button {
+  box-shadow: 0 0 7px $blue;
+  cursor: pointer;
+  background: $blue;
+  border-radius: 5px;
+  border: none;
+  transition: ease 800ms;
+
+  &:hover {
+    filter: drop-shadow(5px 5px 4px $dark-blue);
+    background: $light;
+  }
+}
+
+.icon {
+  transition: ease 1s;
+
+  &:hover {
+    transform: rotate(180deg);
+  }
+}

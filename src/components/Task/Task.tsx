@@ -1,14 +1,16 @@
-import React, {useEffect, useState} from 'react';
-import Icon from "../../../assets/Icon/Icon";
+import React, {useState} from 'react';
 import DeleteModal from "../modals/deleteModal/DeleteModal";
 import CreateEditModal from "../modals/createEditModal/CreateEditModal";
 import CompleteModal from "../modals/completeModal/CompleteModal";
 import classNames from "classnames";
+import {ITask} from "../../types/Task";
+import Icon from "../../assets/Icon/Icon";
 import './taskStyles.scss';
-import {ITask} from "../../../types/Task";
+import {constants} from "../../helpers/constants";
+
 
 const Task = (props: any) => {
-    const { changeSomething, handleDelete, handleComplete } = props;
+    const { handleEdit, handleDelete, handleComplete } = props;
     const task = {
         id: props.id,
         title: props.title,
@@ -16,13 +18,13 @@ const Task = (props: any) => {
         isCompleted: props.isCompleted,
     };
 
-    const [openComplete, setOpenComplete] = useState(false);
-    const [openEdit, setOpenEdit] = useState(false);
-    const [openDelete, setOpenDelete] = useState(false);
+    const [openCompleteModal, setOpenCompleteModal] = useState(false);
+    const [openEditModal, setOpenEditModal] = useState(false);
+    const [openDeleteModal, setOpenDeleteModal] = useState(false);
 
     const completeTask = () => {
         handleComplete(task.id);
-        setOpenComplete(true);
+        setOpenCompleteModal(true);
     };
 
     return (
@@ -31,11 +33,11 @@ const Task = (props: any) => {
                 <h3 className={"title"}>{task.title}</h3>
                 <div className={"edit"}>
                     <Icon
-                        onClick={() => setOpenEdit(true)}
+                        onClick={() => setOpenEditModal(true)}
                         icon="edit"
                         className={"icon"}
                         size={"25"}
-                        color={"#f1fafb"}
+                        color={constants.whiteIconColor}
                     />
                 </div>
             </div>
@@ -49,36 +51,37 @@ const Task = (props: any) => {
                                 icon="complete"
                                 className={"icon"}
                                 size={"20"}
-                                color={"#f1fafb"}
+                                color={constants.whiteIconColor}
                             />
                         </div>
                         <div className={"delete"}>
                             <Icon
-                                onClick={() => setOpenDelete(true)}
+                                onClick={() => setOpenDeleteModal(true)}
                                 icon="delete"
                                 className={"icon"}
                                 size={"20"}
-                                color={"#f1fafb"}
+                                color={constants.whiteIconColor}
                             />
                         </div>
                     </div>
                 </div>
             </div>
             <CreateEditModal
-                handleClose={() => setOpenEdit(false)}
-                open={openEdit}
-                changeData={(task: ITask) => changeSomething(task)}
+                handleClose={() => setOpenEditModal(false)}
+                open={openEditModal}
+                changeData={(task: ITask) => handleEdit(task)}
                 task={task}
             />
             <DeleteModal
                 handleDelete={(id: number) => handleDelete(id)}
-                handleClose={() => setOpenDelete(false)}
-                open={openDelete}
+                handleClose={() => setOpenDeleteModal(false)}
+                open={openDeleteModal}
                 id={task.id}
+                titleDelete={'Are you sure you want to delete this task?'}
             />
             <CompleteModal
-                open={openComplete}
-                handleClose={() => setOpenComplete(false)}
+                open={openCompleteModal}
+                handleClose={() => setOpenCompleteModal(false)}
             />
         </div>
     );

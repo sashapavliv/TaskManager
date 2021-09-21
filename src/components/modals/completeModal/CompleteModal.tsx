@@ -1,7 +1,8 @@
 import React from 'react';
 import {Dialog} from "@material-ui/core";
+import Icon from "../../../assets/Icon/Icon";
+import {constants} from "../../../helpers/constants";
 import './complete.scss'
-import Icon from "../../../../assets/Icon/Icon";
 
 interface IProps {
     handleClose: Function;
@@ -13,7 +14,7 @@ const CompleteModal = ({handleClose, open}: IProps) => {
     return (
         <Dialog open={open} onClose={close}>
                 <div className={'complete-dialog'}>
-                    <Icon onClick={handleClose} icon="delete" className={'icon-complete'} size={"20"} color={"#4993fa"}/>
+                    <Icon onClick={handleClose} icon="delete" className={'icon-complete'} size={"20"} color={constants.blueIconColor}/>
                     <p>Completed!</p>
                 </div>
         </Dialog>

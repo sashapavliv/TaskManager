@@ -1,4 +1,5 @@
 import {ITask} from "../types/Task";
+import {constants} from "../helpers/constants";
 
 export const complete = (id:number, tasks: Array<ITask>) => {
     const findedIndex = tasks.findIndex((value: ITask) => value.id === id);
@@ -23,6 +24,6 @@ export const deleteItem = (id: number, tasks: Array<ITask>) => {
     tasks.splice(findedIndex, 1);
     return tasks;
 }
-export function setLocalStorage(tasks: Array<ITask>) {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+export function setTasksToLocalStorage(tasks: Array<ITask>) {
+    localStorage.setItem(constants.localStorageKey, JSON.stringify(tasks));
 }

@@ -1,16 +1,17 @@
 import React from 'react';
-import {Dialog, DialogActions, DialogTitle} from "@material-ui/core";
+import {Dialog, DialogTitle} from "@material-ui/core";
+import ModalComponent from "../modalComponent/modalComponent";
 import './deleteStyle.scss';
-import ModalComponent from "../../../modalComponent/modalComponent";
 
 interface IProps {
     handleClose: Function;
     handleDelete: Function;
     open: boolean;
-    id: number
+    id?: number;
+    titleDelete: string;
 }
 
-const DeleteModal = ({handleClose, handleDelete, open, id}: IProps) => {
+const DeleteModal = ({handleClose, handleDelete, open, id, titleDelete}: IProps) => {
 
     const close = () => handleClose();
     const remove = () => {
@@ -24,10 +25,10 @@ const DeleteModal = ({handleClose, handleDelete, open, id}: IProps) => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-            <ModalComponent handleClose={close} title={'Delete'} actionText={'Delete'} handleSubmit={remove}>
+            <ModalComponent handleClose={close} title={id?'Delete task':'Delete all tasks'} actionText={'Delete'} handleSubmit={remove}>
             <div className={'delete-dialog'}>
                 <DialogTitle id="alert-dialog-title">
-                    {"Are you sure you want to delete this task?"}
+                        {titleDelete}
                 </DialogTitle>
             </div>
             </ModalComponent>

@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import {Dialog} from "@material-ui/core";
-import {ITask} from "../../../../types/Task";
-import ModalComponent from "../../../modalComponent/modalComponent";
+import {ITask} from "../../../types/Task";
+import ModalComponent from "../modalComponent/modalComponent";
 import './createEdit.scss';
 
 interface IProps {
@@ -23,8 +23,7 @@ const CreateEditModal = ({handleClose, open, task, changeData}: IProps) => {
     };
     const handleValidate = (values: any) => {
         const errors: any = {};
-        if (values.title.length === 0) errors.title = 'Title is required'
-        if (values.description.length === 0) errors.description = 'Description is required'
+        if (values.title.trim().length === 0) errors.title = 'Title is required'
         return errors;
     }
     const textArea = ({field, ...props}: any) => {
@@ -39,7 +38,7 @@ const CreateEditModal = ({handleClose, open, task, changeData}: IProps) => {
 
     return (
         <Dialog open={open} onClose={close}>
-            <ModalComponent handleClose={handleClose} title={task?'Edit':'Add'}>
+            <ModalComponent handleClose={handleClose} title={task?'Edit task':'Add task'}>
                 <div className={'dialog'}>
                     <Formik initialValues={taskData} onSubmit={submit} validate={handleValidate}>
                         {({isSubmitting}) => {

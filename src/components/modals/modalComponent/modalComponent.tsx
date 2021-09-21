@@ -1,6 +1,7 @@
 import React from 'react';
-import Icon from "../../assets/Icon/Icon";
+import Icon from "../../../assets/Icon/Icon";
 import './style.scss'
+import {constants} from "../../../helpers/constants";
 
 interface IProps {
     handleClose: Function;
@@ -14,8 +15,8 @@ const ModalComponent = ({handleSubmit, handleClose, children, title, actionText}
     return (
         <div className={'modal-block'}>
             <div className={'header'}>
-                <p>{title} Task</p>
-                <Icon onClick={handleClose} icon="delete" className={'icon'} size={"20"} color={"#4993fa"}/>
+                <p>{title}</p>
+                <Icon onClick={handleClose} icon="delete" className={'icon'} size={"20"} color={constants.blueIconColor}/>
             </div>
             <div className={'children'}>
                 {children}
