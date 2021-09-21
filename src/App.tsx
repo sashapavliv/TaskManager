@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
-import HomePage from "./components/HomePage/HomePage";
+import './styles/App.css';
+import Tasks from "./components/Tasks/Tasks";
 
 function App() {
   return (
     <div className={'main-block'}>
-        <HomePage/>
+        <Tasks/>
     </div>
   );
 }

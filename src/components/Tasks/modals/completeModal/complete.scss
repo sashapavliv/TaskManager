@@ -1,13 +1,28 @@
-.complete-dialog{
+@import "../../../../styles/variables.scss";
+
+.complete-dialog {
   width: 500px;
-  opacity: 0.33;
-  background: #f1fafb;
-  p{
-    color: #4993fa;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $fourth-color;
     text-align: center;
     font-size: 50px;
   }
+
+  .icon-complete {
+    transition: ease 1s;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
 }
-.close-icon{
-  background: none;
-}
+

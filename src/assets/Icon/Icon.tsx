@@ -12,7 +12,14 @@ const Icon: React.FC<{
 }> = (props) => {
     const { color, size = "100%", icon, style = "" } = props;
     return (
-        <IcomoonReact className={props.className} onClick={props.onClick} style={style} iconSet={iconSet} color={color} size={size} icon={icon} />
+        <IcomoonReact
+            className={props.className}
+            onClick={props.onClick}
+            style={style}
+            iconSet={iconSet}
+            color={color}
+            size={size}
+            icon={icon} />
     );
 };
 

@@ -1,0 +1,24 @@
+@import "../../styles/variables.scss";
+.header, .footer{
+  background: #81b0ff;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+}
+
+.children{
+  background: $third-color;
+}
+button{
+  box-shadow: 0 0 7px $fourth-color;
+  cursor: pointer;
+  background:$fourth-color;
+  border-radius: 5px;
+  border: none;
+  transition: ease 800ms;
+  &:hover{
+    filter: drop-shadow(5px 5px 4px #4966fa);
+    background: $first-color;
+  }
+}

@@ -1,0 +1,18 @@
+.first-window{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  h3{
+    font-size: 30px;
+  }
+  p{
+    font-size: 24px;
+  }
+  button{
+    width: 70px;
+    height: 40px;
+    font-size: 24px;
+  }
+}

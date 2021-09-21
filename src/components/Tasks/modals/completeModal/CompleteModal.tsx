@@ -12,12 +12,10 @@ const CompleteModal = ({handleClose, open}: IProps) => {
     const close = () => handleClose();
     return (
         <Dialog open={open} onClose={close}>
-            <div className={'complete-dialog'}>
-                <div className={'close-icon'}>
-                    <Icon onClick={handleClose} icon="delete" className={'icon'} size={"20"} color={"#4993fa"}/>
+                <div className={'complete-dialog'}>
+                    <Icon onClick={handleClose} icon="delete" className={'icon-complete'} size={"20"} color={"#4993fa"}/>
+                    <p>Completed!</p>
                 </div>
-                <p>Complited!</p>
-            </div>
         </Dialog>
     );
 };

@@ -1,8 +1,11 @@
+@import "../../../../styles/variables.scss";
+
 .dialog {
   width: 450px;
   height: 450px;
-  background: #9dc6ff;
+  padding-top: 20px;
 }
+
 .close-icon {
   display: flex;
   align-items: center;
@@ -10,6 +13,7 @@
   height: 40px;
   padding: 0 15px;
 }
+
 form {
   display: flex;
   justify-content: center;
@@ -32,38 +36,43 @@ form {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
   p {
     font-size: 22px;
     font-weight: bold;
   }
 }
+
 .data-container {
   width: 100%;
   margin-bottom: 15px;
-  .input{
+
+  .input {
     font-size: 20px;
     font-weight: 500;
     height: 40px;
     background: #f1fafb;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 7px #4993fa;
+    box-shadow: 0 0 7px $fourth-color;
   }
 }
-.error-title, .error-body{
+
+.error-title, .error-body {
   color: red;
 }
 
 .body-container {
   width: 100%;
   margin-bottom: 30px;
-  .text-area{
+
+  .text-area {
     font-size: 20px;
     font-weight: 500;
     background: #f1fafb;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 7px #4993fa;
+    box-shadow: 0 0 7px $fourth-color;
   }
 }
 
@@ -71,29 +80,33 @@ form {
   padding-bottom: 20px;
   width: 100%;
   text-align: center;
-  button{
+
+  button {
     cursor: pointer;
     padding: 7px 15px;
-    background:#4993fa;
+    background: $fourth-color;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 0 7px #4993fa;
+    box-shadow: 0 0 7px $fourth-color;
   }
-  button:hover{
+
+  button:hover {
     filter: drop-shadow(5px 5px 4px #4966fa);
     transition: ease 800ms;
-    background: #f1fafb;
+    background: $first-color;
   }
 }
 
 input, textarea {
   width: 100%;
+  padding: 0 7px;
 }
 
 textarea {
   height: 140px;
   resize: none;
 }
+
 @media (max-width: 700px) {
   .dialog {
     width: 300px;
